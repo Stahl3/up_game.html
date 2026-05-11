@@ -1,0 +1,660 @@
+/* ==================== RESET & GENERAL ====================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==================== CONTAINER & LAYOUT ====================*/
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+main {
+    padding: 40px 30px;
+    min-height: 500px;
+}
+
+/* ==================== SCREENS ====================*/
+.screen {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==================== TITLE SCREEN ====================*/
+#titleScreen h2 {
+    color: #667eea;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#titleScreen p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.input-group {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.input-group input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 15px;
+    font-size: 1em;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+/* ==================== BUTTONS ====================*/
+.btn-primary, .btn-secondary, .btn-fishing, .btn-hunting {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-fishing {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%);
+    color: white;
+}
+
+.btn-fishing:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
+}
+
+.btn-hunting {
+    background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+    color: white;
+}
+
+.btn-hunting:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(78, 205, 196, 0.4);
+}
+
+/* ==================== GAME SCREEN ====================*/
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.player-info {
+    font-weight: bold;
+    color: #667eea;
+    font-size: 1.1em;
+}
+
+.score-display {
+    display: flex;
+    gap: 30px;
+    font-weight: bold;
+}
+
+.score-item {
+    color: #764ba2;
+    font-size: 1.05em;
+}
+
+.score-item span {
+    color: #FF6B6B;
+    font-size: 1.2em;
+}
+
+#gameTitle {
+    font-size: 1.8em;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#instructionsText {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1em;
+    font-style: italic;
+}
+
+/* ==================== CANVAS ====================*/
+#gameCanvas {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 20px auto;
+    background: white;
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== QUESTION PANEL ====================*/
+.question-panel {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    animation: popIn 0.3s ease-out;
+}
+
+.question-panel.hidden {
+    display: none;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#questionText {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.answer-btn {
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.answer-btn:hover:not(:disabled) {
+    background: #667eea;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.answer-btn:disabled {
+    cursor: not-allowed;
+}
+
+.answer-btn.correct {
+    background: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+    animation: correctPulse 0.5s ease-out;
+}
+
+.answer-btn.incorrect {
+    background: #f44336;
+    border-color: #f44336;
+    color: white;
+    animation: shake 0.4s ease-out;
+}
+
+@keyframes correctPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+#answerFeedback {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 30px;
+}
+
+#answerFeedback.correct {
+    background: #c8e6c9;
+    color: #2e7d32;
+}
+
+#answerFeedback.incorrect {
+    background: #ffcdd2;
+    color: #c62828;
+}
+
+/* ==================== LEADERBOARD ====================*/
+.leaderboard-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 25px;
+    font-size: 1.05em;
+    font-weight: bold;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background: #f0f0f0;
+}
+
+.tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.leaderboard-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.leaderboard-table th {
+    padding: 18px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+.leaderboard-table td {
+    padding: 15px 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.leaderboard-table tbody tr {
+    transition: all 0.3s;
+}
+
+.leaderboard-table tbody tr:hover {
+    background: #f5f7fa;
+}
+
+.leaderboard-table tbody tr:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+.leaderboard-table tbody tr:nth-child(1) {
+    background: #fff9e6;
+    font-weight: bold;
+}
+
+.leaderboard-table tbody tr:nth-child(1) td:first-child::before {
+    content: '🥇 ';
+}
+
+.leaderboard-table tbody tr:nth-child(2) {
+    background: #f0f0f0;
+}
+
+.leaderboard-table tbody tr:nth-child(2) td:first-child::before {
+    content: '🥈 ';
+}
+
+.leaderboard-table tbody tr:nth-child(3) td:first-child::before {
+    content: '🥉 ';
+}
+
+/* ==================== RESPONSIVE DESIGN ====================*/
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.95em;
+    }
+
+    main {
+        padding: 25px 15px;
+    }
+
+    .button-group {
+        max-width: 100%;
+    }
+
+    .btn-primary, .btn-secondary, .btn-fishing, .btn-hunting {
+        max-width: 100%;
+    }
+
+    #gameTitle {
+        font-size: 1.4em;
+    }
+
+    #instructionsText {
+        font-size: 0.9em;
+    }
+
+    #questionText {
+        font-size: 1.3em;
+    }
+
+    .answer-btn {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+
+    .score-display {
+        gap: 15px;
+        font-size: 0.95em;
+    }
+
+    .score-item span {
+        font-size: 1.1em;
+    }
+
+    .game-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+
+    .question-panel {
+        margin: 15px 0;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 15px;
+    }
+
+    header {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.85em;
+    }
+
+    main {
+        padding: 20px 12px;
+        min-height: auto;
+    }
+
+    #gameTitle {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    #instructionsText {
+        font-size: 0.85em;
+        margin-bottom: 10px;
+    }
+
+    #gameCanvas {
+        max-width: 100%;
+        border-width: 2px;
+    }
+
+    #questionText {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    .answer-options {
+        gap: 10px;
+    }
+
+    .answer-btn {
+        font-size: 0.95em;
+        padding: 10px 12px;
+    }
+
+    .input-group input {
+        max-width: 100%;
+        font-size: 0.95em;
+    }
+
+    .player-info,
+    .score-item {
+        font-size: 0.95em;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 8px 10px;
+        font-size: 0.85em;
+    }
+
+    .question-panel {
+        padding: 15px;
+    }
+
+    .leaderboard-tabs {
+        gap: 5px;
+    }
+
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* ==================== UTILITIES ====================*/
+.hidden {
+    display: none !important;
+}
+
+/* ==================== ANIMATIONS ====================*/
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+/* ==================== ACCESSIBILITY ====================*/
+button:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+input:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==================== PRINT STYLES ====================*/
+@media print {
+    body {
+        background: white;
+    }
+
+    .container {
+        box-shadow: none;
+        max-width: 100%;
+    }
+
+    button {
+        display: none;
+    }
+}
